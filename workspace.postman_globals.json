@@ -1,0 +1,15 @@
+{
+	"id": "51ffe92d-5838-434e-82b0-a573263f8e79",
+	"values": [
+		{
+			"key": "baseUrlVerifier",
+			"value": "",
+			"type": "any",
+			"enabled": true
+		}
+	],
+	"name": "Globals",
+	"_postman_variable_scope": "globals",
+	"_postman_exported_at": "2024-02-16T21:20:03.085Z",
+	"_postman_exported_using": "Postman/10.23.1"
+}
