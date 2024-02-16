@@ -8,6 +8,20 @@
 	"item": [
 		{
 			"name": "create task",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "1df27793-dffb-4fb6-8091-bf95a80c68b4",
+						"exec": [
+							"let jsonBody = JSON.parse(responseBody)",
+							"console.log(jsonBody.id)",
+							"pm.environment.set(\"id\", jsonBody.id);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"id": "329043e9-4119-464a-9fac-4c0e92d7eee1",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
@@ -33,12 +47,10 @@
 					"raw": "{\n  \"text\": \"{{text}}\",\n  \"answer\": \"{{answer}}\",\n  \"title\": \"{{title}}\"\n}"
 				},
 				"url": {
-					"raw": "http://localhost:8080/api/tasks",
-					"protocol": "http",
+					"raw": "{{baseUrlVerifier}}/api/tasks",
 					"host": [
-						"localhost"
+						"{{baseUrlVerifier}}"
 					],
-					"port": "8080",
 					"path": [
 						"api",
 						"tasks"
@@ -49,6 +61,18 @@
 		},
 		{
 			"name": "create task titleLong 500ch",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "d0f4d085-c6df-4ef0-a11c-3538ac1d3954",
+						"exec": [
+							"pm.variables.set(\"titleLong500\", \"Необх. создать две целочисл.переменные (a, b), присвоить произвольные знач. переменным на ваш выбор и вывести следующие строки: maybe a and b are even - если сумма переменных четная some variable is odd - если сумма переменных нечетная Необходимо создать целочисл. переменную, присвоить произвольное знач. переменной на ваш выбор и вывести следующие строки: больше 10 - если переменная больше 10 меньше 100 - если переменная меньше 100 результат деления на 2 больше 20 - если это соответствует истине\")"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"id": "a5775871-5679-464a-87d4-bbbc32a4d5b5",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
@@ -74,12 +98,10 @@
 					"raw": "{\n    \"text\": \"{{text}}\",\n    \"answer\": \"{{answer}}\",\n    \"title\": \"{{titleLong500}}\"\n}"
 				},
 				"url": {
-					"raw": "http://localhost:8080/api/tasks",
-					"protocol": "http",
+					"raw": "{{baseUrlVerifier}}/api/tasks",
 					"host": [
-						"localhost"
+						"{{baseUrlVerifier}}"
 					],
-					"port": "8080",
 					"path": [
 						"api",
 						"tasks"
@@ -90,6 +112,18 @@
 		},
 		{
 			"name": "create task textLong 256ch",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "ee97373b-8f2b-47a4-bfdb-79798bd5dd99",
+						"exec": [
+							"pm.variables.set(\"textLong256\", \"I have always been a kind and loving person — everyone will tell you this. They will also tell you that I have always loved animals more than anything. When I was a little boy, my family always had many different animals round the house. As I grew up, I sp\")"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"id": "dd1f7adb-ab1d-4d5f-a46f-9844a3e9bf7d",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
@@ -115,12 +149,10 @@
 					"raw": "{\n    \"text\": \"{{textLong256}}\",\n    \"answer\": \"{{answer}}\",\n    \"title\": \"{{title}}\"\n}"
 				},
 				"url": {
-					"raw": "http://localhost:8080/api/tasks",
-					"protocol": "http",
+					"raw": "{{baseUrlVerifier}}/api/tasks",
 					"host": [
-						"localhost"
+						"{{baseUrlVerifier}}"
 					],
-					"port": "8080",
 					"path": [
 						"api",
 						"tasks"
@@ -131,6 +163,18 @@
 		},
 		{
 			"name": "create task answerLong 256ch",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "edc3d5c3-a36b-4afc-aae4-66d41fda66ca",
+						"exec": [
+							"pm.variables.set(\"answerLong256\", \"Темуэра Моррисон исполняет роль Бобы Фетта, также в сериале появляются Минг-На Вен и Педро Паскаль. Все они вновь исполняют свои роли из «Мандалорца» и других предыдущих работ по «Звёздным войнам». Было предпринято несколько попыток  разработать  отдельный\")"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"id": "0f105911-e7bf-4a03-af77-89c0082b466b",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
@@ -156,12 +200,10 @@
 					"raw": "{\n    \"text\": \"{{text}}\",\n    \"answer\": \"{{answerLong256}}\",\n    \"title\": \"{{title}}\"\n}"
 				},
 				"url": {
-					"raw": "http://localhost:8080/api/tasks",
-					"protocol": "http",
+					"raw": "{{baseUrlVerifier}}/api/tasks",
 					"host": [
-						"localhost"
+						"{{baseUrlVerifier}}"
 					],
-					"port": "8080",
 					"path": [
 						"api",
 						"tasks"
@@ -198,12 +240,10 @@
 					"raw": "{\n    \"text\": \"{{text}}\",\n    \"answer\": \"{{answer}}\",\n    \"title\": \"{{title}}\"\n}"
 				},
 				"url": {
-					"raw": "http://localhost:8080/api/tasks",
-					"protocol": "http",
+					"raw": "{{baseUrlVerifier}}/api/tasks",
 					"host": [
-						"localhost"
+						"{{baseUrlVerifier}}"
 					],
-					"port": "8080",
 					"path": [
 						"api",
 						"tasks"
@@ -239,12 +279,10 @@
 					"raw": "{\n    \"text\": \"{{text}}\",\n    \"title\": \"{{title}}\"\n}"
 				},
 				"url": {
-					"raw": "http://localhost:8080/api/tasks",
-					"protocol": "http",
+					"raw": "{{baseUrlVerifier}}/api/tasks",
 					"host": [
-						"localhost"
+						"{{baseUrlVerifier}}"
 					],
-					"port": "8080",
 					"path": [
 						"api",
 						"tasks"
@@ -280,12 +318,10 @@
 					"raw": "{\n    \"answer\": \"{{answer}}\",\n    \"title\": \"{{title}}\"\n}"
 				},
 				"url": {
-					"raw": "http://localhost:8080/api/tasks",
-					"protocol": "http",
+					"raw": "{{baseUrlVerifier}}/api/tasks",
 					"host": [
-						"localhost"
+						"{{baseUrlVerifier}}"
 					],
-					"port": "8080",
 					"path": [
 						"api",
 						"tasks"
@@ -321,12 +357,10 @@
 					"raw": "{\n    \"text\": \"{{text}}\",\n    \"answer\": \"{{answer}}\"\n}"
 				},
 				"url": {
-					"raw": "http://localhost:8080/api/tasks",
-					"protocol": "http",
+					"raw": "{{baseUrlVerifier}}/api/tasks",
 					"host": [
-						"localhost"
+						"{{baseUrlVerifier}}"
 					],
-					"port": "8080",
 					"path": [
 						"api",
 						"tasks"
@@ -337,6 +371,20 @@
 		},
 		{
 			"name": "create task all empty",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "16f708c6-c401-401a-8f92-9d0926fb8c1c",
+						"exec": [
+							"pm.variables.set(\"sadPathTextEmpty\", \"\")",
+							"pm.variables.set(\"sadPathAnswerEmpty\", \"\")",
+							"pm.variables.set(\"sadPathTitleEmpty\", \"\")"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"id": "16396bf2-2ac8-40f9-882f-acc5e5388f99",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
@@ -362,12 +410,10 @@
 					"raw": "{\n    \"text\": \"{{sadPathTextEmpty}}\",\n    \"answer\": \"{{sadPathAnswerEmpty}}\",\n    \"title\": \"{{sadPathTitleEmpty}}\"\n}"
 				},
 				"url": {
-					"raw": "http://localhost:8080/api/tasks",
-					"protocol": "http",
+					"raw": "{{baseUrlVerifier}}/api/tasks",
 					"host": [
-						"localhost"
+						"{{baseUrlVerifier}}"
 					],
-					"port": "8080",
 					"path": [
 						"api",
 						"tasks"
@@ -378,6 +424,18 @@
 		},
 		{
 			"name": "create task text value integer",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "b7b986cb-8ca3-4888-8b6f-8fb28c036de9",
+						"exec": [
+							"pm.variables.set(\"num\", 7)"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"id": "e8329eb2-089d-4e72-a989-08dcbd93ab29",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
@@ -403,12 +461,10 @@
 					"raw": "{\n    \"text\": {{num}},\n    \"answer\": \"{{answer}}\",\n    \"title\": \"{{title}}\"\n}"
 				},
 				"url": {
-					"raw": "http://localhost:8080/api/tasks",
-					"protocol": "http",
+					"raw": "{{baseUrlVerifier}}/api/tasks",
 					"host": [
-						"localhost"
+						"{{baseUrlVerifier}}"
 					],
-					"port": "8080",
 					"path": [
 						"api",
 						"tasks"
@@ -419,6 +475,18 @@
 		},
 		{
 			"name": "create task title value boolean",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "5b7acbe9-8dd0-48a6-98ec-8f2b45322a1f",
+						"exec": [
+							"pm.variables.set(\"bool\", true)"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"id": "20bc3950-2db7-4486-bddb-21c3634793a4",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
@@ -444,12 +512,10 @@
 					"raw": "{\n    \"text\": \"{{text}}\",\n    \"answer\": \"{{answer}}\",\n    \"title\": {{bool}}\n}"
 				},
 				"url": {
-					"raw": "http://localhost:8080/api/tasks",
-					"protocol": "http",
+					"raw": "{{baseUrlVerifier}}/api/tasks",
 					"host": [
-						"localhost"
+						"{{baseUrlVerifier}}"
 					],
-					"port": "8080",
 					"path": [
 						"api",
 						"tasks"
@@ -460,6 +526,18 @@
 		},
 		{
 			"name": "create task answer value integer",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "ca3740f5-4913-4e6e-807d-5e3d56b8bcb2",
+						"exec": [
+							"pm.variables.set(\"answerNum\", 98)"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"id": "993f766f-3ddc-46c7-a8e5-e04f83267168",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
@@ -485,12 +563,10 @@
 					"raw": "{\n    \"text\": \"{{text}}\",\n    \"answer\": {{answerNum}},\n    \"title\": \"{{title}}\"\n}"
 				},
 				"url": {
-					"raw": "http://localhost:8080/api/tasks",
-					"protocol": "http",
+					"raw": "{{baseUrlVerifier}}/api/tasks",
 					"host": [
-						"localhost"
+						"{{baseUrlVerifier}}"
 					],
-					"port": "8080",
 					"path": [
 						"api",
 						"tasks"
@@ -498,6 +574,48 @@
 				}
 			},
 			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "bec31307-985a-47ea-b096-d7af1ab1d5f7",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "d88de9a3-71b4-490f-bb7b-30eaf0985976",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "49fa3edd-407e-42c0-b036-140821c97cb6",
+			"key": "text",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"id": "e53f36a6-40db-4cb0-9bee-9e9fcd82dc86",
+			"key": "answer",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"id": "97d16b16-d76e-488e-81c7-f90ea82c72e7",
+			"key": "title",
+			"value": "",
+			"type": "string"
 		}
 	]
 }
